@@ -4,6 +4,12 @@
 
 **HACTREE** is an AI-powered export strategy analyst platform designed to assist enterprises preparing for international trade. It offers automated HS code classification, integrated access to country-specific tariff and TBT (Technical Barriers to Trade) data, promising market analysis, and auto-generated export strategy reports.
 
+### 💬 자연어 질의응답 데모
+![QA 데모](demo/qa_interface.png)
+
+### 📦 HS 코드 예측 데모
+![HS코드 예측](demo/hscode_predict.png)
+
 ---
 
 ### 2. Project Description
