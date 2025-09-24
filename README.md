@@ -1,8 +1,8 @@
-## HACTREE: HS Code Auto Classification and Trade Intelligence System for Export-Oriented Enterprises
+## HACTREE: HS Code Auto Classification and Trade Report for Export Enterprises
 
-### 1. Project Overview
+### 1. Project Topic
 
-**HACTREE** is an AI-powered export strategy analyst platform designed to assist enterprises preparing for international trade. It offers automated HS code classification, integrated access to country-specific tariff and TBT (Technical Barriers to Trade) data, promising market analysis, and auto-generated export strategy reports.
+HACTREE is a trade strategy platform that helps enterprises prepare for international markets. It offers automated HS code classification, integrated access to country-specific tariff and TBT (Technical Barriers to Trade) data, and promising market ranking　and analysis.
 
 ### 💬 자연어 질의응답 데모
 ![QA 데모](demo/qa_interface.png)
@@ -12,55 +12,52 @@
 
 ---
 
-### 2. Project Description
+### 2. Description
 
 #### Objective
 
-This project aims to develop an AI-driven platform that automates the end-to-end process of export strategy formulation by providing the following capabilities:
-
-* Automatic classification of Harmonized System (HS) codes based on product descriptions
-* Retrieval and presentation of relevant tariff and non-tariff (TBT) information by country
-* Recommendation of promising export destinations
-* Automated generation of customized export strategy reports
+The goal of this project is to build an AI solution that simplifies export strategy development.
 
 #### Background and Motivation
 
-* Exporters often face difficulties in interpreting and consolidating complex regulatory and tariff data across multiple jurisdictions
-* Although public trade datasets are available, the burden of interpretation and strategy development remains on the user
-* There is a growing demand for AI services that facilitate strategic decision-making without requiring expert knowledge
-* This project further develops the award-winning idea "TREE" (2023 competition) into a practical and scalable solution
+* Global trade risks such as Trump's tariff war can lead higher tariffs, lost FTA benefits, and weakened export strategies for enterprises.
+* The Export enterprises (**SMEs located outside major cities**) often lack the resources and expertise required for strategy development.
+* The burden of interpretation and strategy development remains on exporters.
+* There is a growing demand for AI services that interprete and consolidate complex regulatory and tariff data that requires expert knowlegdes for trade.
+* This project further develops the award-winning idea "TREE" in the 2023 competition into a practical and scalable solution.
 
-#### Technologies and Tools
+#### Tools
 
-* **HS Code Classification**: BiLSTM-based text classifier trained on official customs datasets
-* **Natural Language QA**: Retrieval-Augmented Generation (RAG) system using Polyglot-ko LLM and FAISS-based vector search
-* **Document Processing**: pdfplumber, Tesseract OCR, LangChain TextSplitter
-* **Text Embedding**: SentenceTransformer (MiniLM) and local FAISS vector database
-* **Web Interface**: Interactive UI developed with Gradio
 * **Development Environment**: Python 3.10, Visual Studio Code
 
-#### Key Features
+| **Main Function**                                     | **Description**                                                                                                                                                            | **Technologies Used**                                                                 |
+| ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| **Local Database**                           | Store trade-related datas (raw and structured form) such as country reports, market news, and industry | File system (local DB) |
+| **Automated Text Extraction & Vectorization**         | Detect file type (text or image), extracts text, splits into semantic chunks, and converts into embeddings stored in FAISS                                              | LangChain, sentence-transformers (MiniLM)     |
+| **HS Code Prediction & Export Market Recommendation** | Predict top HS codes from product descriptions and recommend promising export destinations based on tariffs, import volume, and TBT barriers                            | BiLSTM (PyTorch)           |
+| **Vector Search Engine (RAG)**          | Match natural language queries with document chunks, integrating predicted HS codes and country info for accurate retrieval                                             | FAISS                                 |
+| **LLM-Based Report**                       | Generate natural language responses and export strategy reports tailored to user input.                                                                        | Polyglot-ko                              |
 
-* HS code prediction based on input product names or descriptions
-* Automatic linkage to tariff rates and TBT requirements based on predicted HS codes
-* Real-time, vector-based QA system for trade strategy, market information, and regulatory insights
-* Market attractiveness analysis and automated generation of export strategy reports by country
-* Future enhancements include customizable PDF/HTML report storage and distribution
+#### Datasets
+* Public trade reports from KOTRA
+  * Country information
+  * Import/export trade status by country
+  * Overseas market news
+  * Market entry strategies
+  * Industry trends by market
+  * Import regulation status by country
 
-#### Business Strategy and Expected Impact
+* Training Data for HS code classification models from Korea Customs Service (UNIPASS)
+  * Basic tariffs, FTA tariffs, import requirements, and TBT cases by HS code and country
+  * Product names and HS codes designated by Korea Customs Service
 
-* **Scalable Development Roadmap**
 
-  * *Phase 1*: Open-source prototype for export strategy analysis
-  * *Phase 2*: Expansion into a SaaS platform (user accounts, team collaboration, API access)
+#### Expected Contribution
 
-* **Revenue Model**
+* **Decreasing the Digital Gap for SMEs**
+  * Automate export strategy formulation, enabling SMEs under shortage of experts and resources to make strategic decisions
+  * Reduce digital disparities in the export ecosystem and make more enterprises participate in export market
 
-  * Paid report generation services for B2B and B2G clients
-  * Subscription-based API access to trade intelligence data
-
-* **Anticipated Societal Impact**
-
-  * Empowerment of SMEs to independently formulate digital export strategies
-  * Improved usability of public trade data
-  * Reduction in export failures through automated HS code validation and TBT risk alerts
+* **Improving Risk Management for Regulations and Tariffs**
+  * Detect and warn against HS code misclassification, tariff misjudgments, and technical barriers (TBT)
+  * Support early mitigation of trade risks and reduce the likelihood of export failures
