@@ -4,13 +4,14 @@
 
 HACTREE is a trade strategy platform that helps enterprises prepare for international markets. It offers automated HS code classification, integrated access to country-specific tariff and TBT (Technical Barriers to Trade) data, and promising market ranking　and analysis.
 
-##### Present UI with GRADIO
-![Present UI](demo/hactree1.png)
-![Present UI](demo/hactree2.png)
 
+<img src="demo/hactree1.png" alt="QA Demo" width="500"/>
+<img src="demo/hactree2.png" alt="QA Demo" width="500"/>
+##### Present UI with GRADIO
+
+<img src="demo/대표이미지_1.png" alt="QA Demo" width="500"/>
+<img src="demo/대표이미지_2.png" alt="QA Demo" width="500"/>
 ##### Future UI with HTML
-![Future UI](demo/대표이미지_1.png)
-![Future UI](demo/대표이미지_2.png)
 
 ---
 
