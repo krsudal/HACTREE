@@ -26,14 +26,14 @@ The goal of this project is to build an AI solution that simplifies export strat
 * There is a growing demand for AI services that interprete and consolidate complex regulatory and tariff data that requires expert knowlegdes for trade.
 * This project further develops the award-winning idea "TREE" in the 2023 competition into a practical and scalable solution.
 
-#### Tools
+#### Main Tasks
 
 * **Development Environment**: Python 3.10, Visual Studio Code
 
-| **Main Function**                                     | **Description**                                                                                                                                                            | **Technologies Used**                                                                 |
+| **Main Function**                                     | **Description**                                                                                                                                                            | **Tool**                                                                 |
 | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| **Local Database**                           | Store trade-related datas (raw and structured form) such as country reports, market news, and industry | File system (local DB) |
-| **Automated Text Extraction & Vectorization**         | Detect file type (text or image), extracts text, splits into semantic chunks, and converts into embeddings stored in FAISS                                              | LangChain, sentence-transformers (MiniLM)     |
+| **Local Database**                           | Store trade-related datas (raw and structured form) such as country reports, market news, and industry | File system |
+| **Automated Text Extraction & Vectorization**         | Detect file type (text or image), extracts text, splits into semantic chunks, and converts into embeddings stored in FAISS                                              | LangChain, sentence-transformers     |
 | **HS Code Prediction & Export Market Recommendation** | Predict top HS codes from product descriptions and recommend promising export destinations based on tariffs, import volume, and TBT barriers                            | BiLSTM (PyTorch)           |
 | **Vector Search Engine (RAG)**          | Match natural language queries with document chunks, integrating predicted HS codes and country info for accurate retrieval                                             | FAISS                                 |
 | **LLM-Based Report**                       | Generate natural language responses and export strategy reports tailored to user input.                                                                        | Polyglot-ko                              |
